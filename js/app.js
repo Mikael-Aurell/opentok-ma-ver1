@@ -1,21 +1,8 @@
-//const apiKey = '45828062';
-//const sessionId = '1_MX40NTgyODA2Mn5-MTYyMjcyMjA4NzAwNX5Ub285dy9YME41dU5OemFjQ2xEU2xWUWJ-UH4';
-//const token = 'T1==cGFydG5lcl9pZD00NTgyODA2MiZzaWc9YjEzZmU1MWMzOGVjZjk0MzYwNWY0ZmY2MmQyZDU2MmIyMmE1MWY4MDpzZXNzaW9uX2lkPTFfTVg0ME5UZ3lPREEyTW41LU1UWXlNamN5TWpBNE56QXdOWDVVYjI4NWR5OVlNRTQxZFU1T2VtRmpRMnhFVTJ4V1VXSi1VSDQmY3JlYXRlX3RpbWU9MTYyMjcyMjIwMyZub25jZT0wLjU5NzE2NTk1NTMwNjgxMzImcm9sZT1wdWJsaXNoZXImZXhwaXJlX3RpbWU9MTYyMjgwODYwMw==';
+const apiKey = '45828062';
+const sessionId = '1_MX40NTgyODA2Mn5-MTYyMjcyMjA4NzAwNX5Ub285dy9YME41dU5OemFjQ2xEU2xWUWJ-UH4';
+const token = 'T1==cGFydG5lcl9pZD00NTgyODA2MiZzaWc9YjEzZmU1MWMzOGVjZjk0MzYwNWY0ZmY2MmQyZDU2MmIyMmE1MWY4MDpzZXNzaW9uX2lkPTFfTVg0ME5UZ3lPREEyTW41LU1UWXlNamN5TWpBNE56QXdOWDVVYjI4NWR5OVlNRTQxZFU1T2VtRmpRMnhFVTJ4V1VXSi1VSDQmY3JlYXRlX3RpbWU9MTYyMjcyMjIwMyZub25jZT0wLjU5NzE2NTk1NTMwNjgxMzImcm9sZT1wdWJsaXNoZXImZXhwaXJlX3RpbWU9MTYyMjgwODYwMw==';
 
-var apiKey = '';
-var sessionId = '';
-var  token = '';
-
-let SERVER_BASE_URL = 'https://opentok-ma-ver1.herokuapp.com';
-fetch(SERVER_BASE_URL + '/session').then(function(res) {
-    return res.json()
-}).then(function(res) {
-    apiKey = res.apiKey;
-    sessionId = res.sessionId;
-    token = res.token;
-
-    initializeSession();
-}).catch(handleError);
+initializeSession();
 
 // Handling all of our errors here by alerting them
 function handleError(error) {
@@ -37,7 +24,7 @@ function initializeSession() {
             frameRate: 30,
             enableStereo: true,
             insertDefaultUI: true,
-            showControls: false
+            showControls: true
 
         }, handleError);
     });
@@ -50,7 +37,7 @@ function initializeSession() {
         frameRate: 30,
         enableStereo: true,
         insertDefaultUI: true,
-        showControls: false
+        showControls: true
     }, handleError);
 
     // Connect to the session
